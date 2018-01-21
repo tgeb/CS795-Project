@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+               http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="rates-template" pageWidth="795" pageHeight="842"
+              columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20"
+              uuid="3737c8f8-35e7-4ea0-bf9f-c557f6bbbdf3">
+
+<field name="currentDate" class="java.util.Date"/> 
+<field name="month" class="java.lang.String"/> 
+<field name="dummyString" class="java.lang.String"/>
+		<field name="id" class="java.lang.Integer"/>
+        <field name="fName" class="java.lang.String"/>
+        <field name="lName" class="java.lang.String"/>     
+        <field name="totalTime" class="java.lang.Long"/>        
+        
+		<title>
+     		 <band height = "50">
+         
+         <textField>
+            <reportElement x = "0" y = "16" width = "160" height = "20"/>
+            <textElement>
+               <font size="16" isBold = "true"/>
+            </textElement>
+             
+            
+            <textFieldExpression>
+               <![CDATA[$F{currentDate}]]>
+            </textFieldExpression>
+        
+         </textField>
+      
+      </band>
+   </title>
+   
+   <pageHeader>
+      <band height = "40">
+         
+         <textField>
+            <reportElement  mode = "Opaque" x = "0" y = "0" 
+               width = "140" height = "20"/>
+            
+            <textElement>
+               <font size="16" isBold = "true"/>
+            </textElement>
+            
+            
+            <textFieldExpression>
+            
+               <![CDATA[$F{dummyString}]]>
+               
+            </textFieldExpression>
+         </textField>
+         <textField>
+            <reportElement  mode = "Opaque" x = "140" y = "0" 
+               width = "120" height = "20"/>
+            
+            <textElement>
+               <font size="16" isBold = "true"/>
+            </textElement>
+            
+            
+            <textFieldExpression>
+            
+               <![CDATA[$F{month}]]>
+               
+            </textFieldExpression>
+         </textField>
+      
+      </band>
+   </pageHeader>
+		
+    <columnHeader>
+        <band height = "50">
+        
+        	<staticText>
+                <reportElement x = "0" y = "0" width = "60" height = "50" />
+                <textElement verticalAlignment = "Middle">
+                    <font size="16" isBold = "true" />
+                </textElement>
+                <text><![CDATA[ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x = "60" y = "0" width = "120" height = "50" />
+                <textElement verticalAlignment = "Middle">
+                    <font size="16" isBold = "true" />
+                </textElement>
+                <text><![CDATA[First Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x = "180" y = "0" width = "120" height = "50" />
+                <textElement verticalAlignment = "Middle">
+                    <font size="16" isBold = "true" />
+                </textElement>
+                <text><![CDATA[Last Name]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x = "300" y = "0" width = "120" height = "50" />
+                <textElement verticalAlignment = "Middle">
+                    <font size="16" isBold = "true" />
+                </textElement>
+                <text><![CDATA[Total Time]]></text>
+            </staticText>
+           
+       </band>
+    </columnHeader>
+
+    <detail>
+        <band height="25">
+        
+        	<textField >
+                <reportElement x="0" y="0" width="60" height="25"/>
+                <textElement verticalAlignment = "Middle">
+                    <font size="14" />
+                </textElement>
+                <textFieldExpression class="java.lang.Integer">
+                    <![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="60" y="0" width="120" height="25"/>
+                <textElement verticalAlignment = "Middle">
+                    <font size="14" />
+                </textElement>
+                <textFieldExpression class="java.lang.String">
+                    <![CDATA[$F{fName}]]></textFieldExpression>
+            </textField>
+            <textField >
+                <reportElement x="180" y="0" width="120" height="25"/>
+                <textElement verticalAlignment = "Middle">
+                    <font size="14" />
+                </textElement>
+                <textFieldExpression class="java.lang.String">
+                    <![CDATA[$F{lName}]]></textFieldExpression>
+            </textField>
+            
+             <textField >
+                <reportElement x="300" y="0" width="120" height="25"/>
+                <textElement verticalAlignment = "Middle">
+                    <font size="14" />
+                </textElement>
+                <textFieldExpression class="java.util.Date">
+                    <![CDATA[$F{totalTime}]]></textFieldExpression>
+            </textField>
+           
+        </band>
+    </detail>
+</jasperReport>
